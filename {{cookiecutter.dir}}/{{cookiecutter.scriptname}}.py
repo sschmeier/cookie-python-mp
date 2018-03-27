@@ -123,7 +123,7 @@ def load_file(filename):
     if filename in ['-', 'stdin']:
         filehandle = sys.stdin
     elif filename.split('.')[-1] == 'gz':
-        filehandle = gzip.open(filename)
+        filehandle = gzip.open(filename, 'rt')
     elif filename.split('.')[-1] == 'bz2':
         filehandle = bz2.BZFile(filename)
     elif filename.split('.')[-1] == 'zip':
@@ -148,7 +148,7 @@ def main():
     elif args.outfile_name in ['-', 'stdout']:
         outfileobj = sys.stdout
     elif args.outfile_name.split('.')[-1] == 'gz':
-        outfileobj = gzip.open(args.outfile_name, 'wb')
+        outfileobj = gzip.open(args.outfile_name, 'wt')
     else:
         outfileobj = open(args.outfile_name, 'w')
 
