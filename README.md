@@ -1,1 +1,1 @@
-# cookie-python-minimal
+# cookie-python-mp
